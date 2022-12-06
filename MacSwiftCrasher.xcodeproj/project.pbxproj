@@ -14,6 +14,8 @@
 		C59650DD2936544300CFE2EB /* MacSwiftCrasherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59650DC2936544300CFE2EB /* MacSwiftCrasherTests.swift */; };
 		C59650E72936544300CFE2EB /* MacSwiftCrasherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59650E62936544300CFE2EB /* MacSwiftCrasherUITests.swift */; };
 		C59650E92936544300CFE2EB /* MacSwiftCrasherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59650E82936544300CFE2EB /* MacSwiftCrasherUITestsLaunchTests.swift */; };
+		C59650F62936548F00CFE2EB /* Crasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59650F52936548F00CFE2EB /* Crasher.swift */; };
+		C5E7AD5C293E5ECF00E3A987 /* BugsplatMac in Frameworks */ = {isa = PBXBuildFile; productRef = C5E7AD5B293E5ECF00E3A987 /* BugsplatMac */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		C59650E22936544300CFE2EB /* MacSwiftCrasherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacSwiftCrasherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C59650E62936544300CFE2EB /* MacSwiftCrasherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacSwiftCrasherUITests.swift; sourceTree = "<group>"; };
 		C59650E82936544300CFE2EB /* MacSwiftCrasherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacSwiftCrasherUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C59650F52936548F00CFE2EB /* Crasher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crasher.swift; sourceTree = "<group>"; };
+		C5F17931293FF4E9003F88BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5E7AD5C293E5ECF00E3A987 /* BugsplatMac in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,8 +100,10 @@
 		C59650C92936544200CFE2EB /* MacSwiftCrasher */ = {
 			isa = PBXGroup;
 			children = (
+				C5F17931293FF4E9003F88BE /* Info.plist */,
 				C59650CA2936544200CFE2EB /* MacSwiftCrasherApp.swift */,
 				C59650CC2936544200CFE2EB /* ContentView.swift */,
+				C59650F52936548F00CFE2EB /* Crasher.swift */,
 				C59650CE2936544300CFE2EB /* Assets.xcassets */,
 				C59650D32936544300CFE2EB /* MacSwiftCrasher.entitlements */,
 				C59650D02936544300CFE2EB /* Preview Content */,
@@ -145,6 +152,9 @@
 			dependencies = (
 			);
 			name = MacSwiftCrasher;
+			packageProductDependencies = (
+				C5E7AD5B293E5ECF00E3A987 /* BugsplatMac */,
+			);
 			productName = MacSwiftCrasher;
 			productReference = C59650C72936544200CFE2EB /* MacSwiftCrasher.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +227,9 @@
 				Base,
 			);
 			mainGroup = C59650BE2936544200CFE2EB;
+			packageReferences = (
+				C5E7AD5A293E5ECF00E3A987 /* XCRemoteSwiftPackageReference "BugSplatMac-SP" */,
+			);
 			productRefGroup = C59650C82936544200CFE2EB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,6 +274,7 @@
 			files = (
 				C59650CD2936544200CFE2EB /* ContentView.swift in Sources */,
 				C59650CB2936544200CFE2EB /* MacSwiftCrasherApp.swift in Sources */,
+				C59650F62936548F00CFE2EB /* Crasher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +438,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MacSwiftCrasher/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -451,6 +466,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MacSwiftCrasher/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -576,6 +592,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C5E7AD5A293E5ECF00E3A987 /* XCRemoteSwiftPackageReference "BugSplatMac-SP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/BugSplat-Git/BugSplatMac-SP";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C5E7AD5B293E5ECF00E3A987 /* BugsplatMac */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5E7AD5A293E5ECF00E3A987 /* XCRemoteSwiftPackageReference "BugSplatMac-SP" */;
+			productName = BugsplatMac;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C59650BF2936544200CFE2EB /* Project object */;
 }

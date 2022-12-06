@@ -6,9 +6,15 @@
 //
 
 import SwiftUI
+import BugsplatMac
 
 @main
 struct MacSwiftCrasherApp: App {
+    
+    init() {
+        BugsplatStartupManager.shared().start()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

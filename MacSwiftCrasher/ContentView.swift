@@ -9,13 +9,29 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack {
+            Color.white
+                .ignoresSafeArea()
+            VStack {
+                Text("mac-swift-crasher")
+                    .foregroundColor(Color.black)
+                    .font(.system(size: 28))
+                Image("bug")
+                    .resizable()
+                    .scaledToFit()
+                Button {
+                    let crasher = Crasher()
+                    let time = crasher.GetTime()
+                    crasher.GenerateStackFramesAndCrash(time: time)
+                } label: {
+                    Text("Crash!")
+                        .foregroundColor(Color.black)
+                        .padding()
+                }
+
+            }
+            .padding()
         }
-        .padding()
     }
 }
 
